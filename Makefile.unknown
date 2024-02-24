@@ -1,0 +1,21 @@
+# Define compiler
+CC=gcc
+
+# Define flags
+	CFLAGS=-Wall -pthread
+
+# Define the target executable
+	TARGET=phsp
+
+# Default target
+all: $(TARGET)
+
+# How to build the target
+$(TARGET): phsp.c
+	$(CC) $(CFLAGS) phsp.c -o $(TARGET) -lm
+
+# Clean up compiled files
+clean:
+	rm -f $(TARGET)
+
+.PHONY: all clean
